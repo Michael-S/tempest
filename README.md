@@ -9,7 +9,7 @@ from the outside, though some http features are not yet implemented.
 
 This is a fork of zenhack's Tempest.  I don't have zenhack's understanding
 of Go, Sandstorm or Tempest internals, or Cap'n'Proto so I'm making this
-up as I go along.
+up as I go along. - Mike
 
 # Building
 
@@ -23,6 +23,9 @@ To build tempest, you will need:
     project. In order to make it work, I had to download the source,
     build a copy, and use that. I compiled it and copied the compiled
     `tinygo` executable over the original in `/usr/local/lib/tinygo/bin`.
+    The `tinygo version` command still reports 0.28.1, but there must
+    have been commits on the main branch that fixed a compilation bug.
+    - Mike
 - Standard C development tools (make, a C compiler, etc).
 - The `bpf_asm` command, included in the linux kernel source tree.
 - capnp (command line tool) version 0.8 or later.
@@ -50,7 +53,8 @@ git clone https://github.com/capnproto/go-capnp
 cd -
 ```
 
-And then update line 10 of your `go.mod` file to reference it.
+And then update line 10 of your `go.mod` file to reference it. The released
+versions of go-capnp are missing a few functions that this project requires. - Mike
 
 
 Then, run the configure script and then `make`. The configure script
