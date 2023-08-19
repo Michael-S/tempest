@@ -279,7 +279,8 @@ func (tx Tx) NewSharingToken(
 				ObjectID: capnp.Struct(oid),
 			},
 		)
-		throw(err, "saving sturdyRef")
+    err = exc.WrapError("saving sturdyRef", err)
+		throw(err)
 		return token
 	})
 }

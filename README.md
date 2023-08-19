@@ -5,6 +5,12 @@ Currently, most of the sandbox setup code is built, and tempest
 is capable of spawning sandstorm apps and plumbing http traffic to them
 from the outside, though some http features are not yet implemented.
 
+## Note
+
+This is a fork of zenhack's Tempest.  I don't have zenhack's understanding
+of Go, Sandstorm or Tempest internals, or Cap'n'Proto so I'm making this
+up as I go along.
+
 # Building
 
 To build tempest, you will need:
@@ -13,6 +19,10 @@ To build tempest, you will need:
 - [tinygo](https://tinygo.org/)
   - If the build complains about missing `wasm-opt`, you may also need
     to install the `binaryen` package.
+  - The default `tinygo` version `0.28.1` crashed while compiling the
+    project. In order to make it work, I had to download the source,
+    build a copy, and use that. I compiled it and copied the compiled
+    `tinygo` executable over the original in `/usr/local/lib/tinygo/bin`.
 - Standard C development tools (make, a C compiler, etc).
 - The `bpf_asm` command, included in the linux kernel source tree.
 - capnp (command line tool) version 0.8 or later.
@@ -39,6 +49,9 @@ cd ../deps
 git clone https://github.com/capnproto/go-capnp
 cd -
 ```
+
+And then update line 10 of your `go.mod` file to reference it.
+
 
 Then, run the configure script and then `make`. The configure script
 accepts most of the same options as typical gnu packages. Additionally
