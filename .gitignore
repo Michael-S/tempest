@@ -24,4 +24,7 @@ mongo-snapshot
 *.db
 *.sqlite3
 
+# Editor files:
+*.swp
+
 env.sh
