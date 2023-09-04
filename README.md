@@ -11,6 +11,12 @@ This is a fork of zenhack's Tempest.  I don't have zenhack's understanding
 of Go, Sandstorm or Tempest internals, or Cap'n'Proto so I'm making this
 up as I go along. - Mike
 
+As of September, 2023, when I try to install Apps through the web interface
+I receive an error:
+external.capnp:UserSession.installPackage: call on null client
+
+I am still digging into it.
+
 # Building
 
 To build tempest, you will need:
